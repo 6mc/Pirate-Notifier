@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Desktop</title>
+	</head>
+
+	<body>
+		<a href="#" id="dnperm">Reguest permision</a>
+		<a href="#" id="dntrigger">Trigger</a>
+
+
+		<script>
+			var dnperm = document.getElementById('dnperm')
+			var dntrigger = document.getElementById('dntrigger')
+
+			dnperm.addEventListener('click', function(e) {
+				e.preventDefault();
+
+				if(!window.Notification) {
+					alert('Sorry, notification are not supported');
+				} else {
+					Notification.requestPermission(function(p){
+						if (p === 'denied') {
+							alert('You have denied notification.');
+						} else if(p === 'garanted'){
+							alert('You have garanted notification.');
+						}
+					});
+				}
+			});
+
+			//Simulate an event
+			dntrigger.addEventListener('click',function(e) {
+				var notify;
+
+				e.preventDefault();
+
+				if (Notification.permission === 'default') {
+					alert('Please allow notification before doing this.');
+				} else{
+					notify = new Notification('New mesage from Matei',{
+						body:'How are you today?',
+						icon:'icon/notification.png',
+						tag:'1234'
+					});
+
+					notify.onclick = function(){
+						window.location = '?message=' + this.tag;
+					};
+				};
+			});
+		</script>
+	</body>
+</html>﻿
