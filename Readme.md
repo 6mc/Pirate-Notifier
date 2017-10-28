@@ -3,6 +3,10 @@
 [![N|Solid](https://img.shields.io/badge/needs-Trigger-green.svg)](https://dizi-fi.ml)
 [![N|Solid](https://img.shields.io/badge/needs-cron-blue.svg)](https://dizi-fi.ml)
 [![N|Solid](https://img.shields.io/badge/pirate-Alert-red.svg)](https://dizi-fi.ml)
+
+
+# What's it ?
+
 Pirate  Link Notifier, Notifies you when your favourite Tv-Show's new episode has pirated
 
 # Important
